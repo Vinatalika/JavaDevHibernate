@@ -5,6 +5,7 @@ import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import java.time.LocalDateTime;
 
+
 @Entity
 @Table(name = "ticket")
 @Data
@@ -17,15 +18,18 @@ public class Ticket {
     @NotNull
     private LocalDateTime createdAt;
 
-    @Column(name = "client_id")
+    @ManyToOne
+    @JoinColumn(name = "client_id")
     @NotNull
-    private Long clientId;
+    private Client client;
 
-    @Column(name = "from_planet_id")
+    @ManyToOne
+    @JoinColumn(name = "from_planet_id")
     @NotNull
-    private Long fromPlanetId;
+    private Planet fromPlanet;
 
-    @Column(name = "to_planet_id")
+    @ManyToOne
+    @JoinColumn(name = "to_planet_id")
     @NotNull
-    private Long toPlanetId;
+    private Planet toPlanet;
 }

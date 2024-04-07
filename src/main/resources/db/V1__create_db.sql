@@ -1,4 +1,3 @@
--- Create client table
 CREATE TABLE IF NOT EXISTS client (
     id BIGINT AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(200) NOT NULL
